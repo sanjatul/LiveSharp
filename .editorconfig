@@ -1,0 +1,76 @@
+# LiveSharp .editorconfig
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.ps1]
+end_of_line = crlf
+
+[*.{cs,csx}]
+# Indentation and spacing
+csharp_indent_block_contents = true
+csharp_indent_braces = false
+csharp_indent_case_contents = true
+csharp_indent_switch_labels = true
+
+# Code style rules (all at error)
+
+# File-scoped namespaces
+csharp_style_namespace_declarations = file_scoped:error
+
+# var preference
+csharp_style_var_for_built_in_types = true:error
+csharp_style_var_when_type_is_apparent = true:error
+csharp_style_var_elsewhere = true:error
+
+# Expression-bodied members
+csharp_style_expression_bodied_methods = when_on_single_line:error
+csharp_style_expression_bodied_constructors = never:error
+csharp_style_expression_bodied_operators = when_on_single_line:error
+csharp_style_expression_bodied_properties = when_on_single_line:error
+csharp_style_expression_bodied_indexers = when_on_single_line:error
+csharp_style_expression_bodied_accessors = when_on_single_line:error
+csharp_style_expression_bodied_lambdas = when_on_single_line:error
+csharp_style_expression_bodied_local_functions = when_on_single_line:error
+
+# 'this.' qualification
+dotnet_style_qualification_for_field = false:error
+dotnet_style_qualification_for_property = false:error
+dotnet_style_qualification_for_method = false:error
+dotnet_style_qualification_for_event = false:error
+
+# Braces required
+csharp_preferred_modifier_order = public,private,protected,internal,file,static,abstract,virtual,sealed,readonly,override,external,unsafe,volatile,async:error
+csharp_using_directive_placement = outside_namespace:error
+dotnet_sort_system_directives_first = true:error
+csharp_style_prefer_braces = true:error
+
+# Modifier preferences
+dotnet_style_require_accessibility_modifiers = always:error
+
+# ConfigureAwait rule (CA2007) default
+dotnet_diagnostic.CA2007.severity = error
+
+# Documentation comments required in src/
+[src/**.cs]
+dotnet_diagnostic.CS1591.severity = error
+
+# CA2007 disabled in ASP.NET Core projects
+[src/LiveSharp.AspNetCore/**.cs]
+dotnet_diagnostic.CA2007.severity = none
+
+# Non-shipping code exceptions
+[tests/**.cs]
+dotnet_diagnostic.CS1591.severity = none
+dotnet_diagnostic.CA2007.severity = none
+
+[examples/**.cs]
+dotnet_diagnostic.CS1591.severity = none
+dotnet_diagnostic.CA2007.severity = none
