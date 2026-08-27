@@ -1,0 +1,33 @@
+# Build outputs
+bin/
+obj/
+artifacts/
+[Tt]est[Rr]esults/
+
+# Visual Studio / IDEs
+.vs/
+.idea/
+*.user
+*.userosscache
+*.sln.docstates
+.vscode/
+
+# Package & Lock files
+*.nupkg
+*.snupkg
+
+# Node / JS
+node_modules/
+dist/
+.next/
+out/
+.turbo/
+
+# Operating System
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs & temp
+*.log
+scratch/
